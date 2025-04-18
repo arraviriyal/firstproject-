@@ -695,35 +695,54 @@ def process_direct_folder_videos(folder_id, channel_id=None, channel_name=None, 
     drive_service = build('drive', 'v3', credentials=credentials)
     
     try:
-        # List all video files in the folder
+        # Query to find all video files in the folder
         query = f"'{folder_id}' in parents and trashed = false and (mimeType contains 'video/' or name contains '.mp4' or name contains '.mov' or name contains '.avi')"
-        results = drive_service.files().list(
-            q=query,
-            spaces='drive',
-            fields='files(id, name, mimeType, createdTime)',
-            orderBy='createdTime desc',
-            pageSize=100  # Get up to 100 videos
-        ).execute()
         
-        video_files = results.get('files', [])
+        # Retrieve all videos using pagination - not just the first 100
+        all_video_files = []
+        page_token = None
         
-        if not video_files:
+        print(f"Retrieving all videos from {TARGET_FOLDER_NAME} folder...")
+        
+        while True:
+            # Get one page of results
+            results = drive_service.files().list(
+                q=query,
+                spaces='drive',
+                fields='nextPageToken, files(id, name, mimeType, createdTime)',
+                pageToken=page_token,
+                pageSize=100  # Maximum allowed page size
+            ).execute()
+            
+            # Add this page's files to our list
+            video_files = results.get('files', [])
+            all_video_files.extend(video_files)
+            
+            # Get next page token, if any
+            page_token = results.get('nextPageToken', None)
+            
+            # If we have no more pages, break the loop
+            if not page_token:
+                break
+        
+        # Now all_video_files contains all videos from the folder
+        if not all_video_files:
             print(f"No video files found in {TARGET_FOLDER_NAME} folder.")
             return False
             
-        print(f"Found {len(video_files)} video files in {TARGET_FOLDER_NAME} folder.")
+        print(f"Found {len(all_video_files)} video files in {TARGET_FOLDER_NAME} folder.")
         
         # Apply limit and random selection if specified
         if random_selection and limit:
             # Randomly select videos up to the limit
-            if limit > len(video_files):
-                limit = len(video_files)
+            if limit > len(all_video_files):
+                limit = len(all_video_files)
             
-            print(f"Randomly selecting {limit} videos for upload.")
-            selected_videos = random.sample(video_files, limit)
+            print(f"Randomly selecting {limit} videos for upload from the entire folder.")
+            selected_videos = random.sample(all_video_files, limit)
         else:
             # Take the first N videos based on limit
-            selected_videos = video_files[:limit] if limit else video_files
+            selected_videos = all_video_files[:limit] if limit else all_video_files
         
         print(f"Processing {len(selected_videos)} videos{' (limited by --limit)' if limit else ''}.")
         
