@@ -122,16 +122,16 @@ def get_youtube_credentials(channel_id=None, channel_name=None):
     
     # Channel name to Drive file ID mapping
     CHANNEL_DRIVE_LINKS = {
-        "AnimeClash": "https://drive.google.com/file/d/1stqrXBmfUT9RU1dI-ne2TB1g6oqOMP2z/view?usp=sharing",
-        "AniSnap": "https://drive.google.com/file/d/1cr0L2BzvUEsJ0hU5ApbJpoyuR3WYC6Fn/view?usp=sharing",
-        "KawaiiCuts": "https://drive.google.com/file/d/1yZeAMperIYb0UA7v2htTYABuHkGRSJLD/view?usp=sharing",
-        "OtakuPulse": "https://drive.google.com/file/d/1Tc_p6IFQqrf41REcpl4qVGnEWuNsSrrK/view?usp=sharing",
-        "SenpaiSnaps": "https://drive.google.com/file/d/1ZcgDV3PyhfAe7H-7v-rhtTlhGzOFycam/view?usp=sharing",
-        "ShinobiSnips": "https://drive.google.com/file/d/1MNGHTcVpbokHFe8O96XjE-ZgNRlcZij6/view?usp=sharing",
-        "ShortsCrazy": "https://drive.google.com/file/d/12IaDZh2NqqFfV1jIEeEJglgRrTSAoHO2/view?usp=sharing",
-        "UltraInstinctEdits": "https://drive.google.com/file/d/1wRZ0QSOexLzPEYFhdSabcTNJokwbClxS/view?usp=sharing", 
-        "VoidNoJutsu": "https://drive.google.com/file/d/19D_WD86e3Mf7K0bwp8gEolRSxHKZcbbL/view?usp=sharing",
-        "ZenkaiZone": "https://drive.google.com/file/d/1mfSOUNEiKT9WYnzhh5KhtZFcUGHPL6fZ/view?usp=sharing"
+        "AnimeClash": "https://drive.google.com/file/d/10jK7v2w6v-MbQOzO7X0P-tC-p2fSaGpb/view?usp=sharing",
+        "AniSnap": "https://drive.google.com/file/d/1dB7mh86gy5WpaKXmXU9ja25FcIV3Q1wr/view?usp=sharing",
+        "KawaiiCuts": "https://drive.google.com/file/d/1g3HJcqpNXQ9qPnKjwp1ktu0_7qnlC9I-/view?usp=sharing",
+        "OtakuPulse": "https://drive.google.com/file/d/1SVYaACDK4Yfe4epx5Cz2e2X0Xb2GX5-c/view?usp=sharing",
+        "SenpaiSnaps": "https://drive.google.com/file/d/10HUSp-nz6RMmMftZ65xmUCSgccz5lCJT/view?usp=sharing",
+        "ShinobiSnips": "https://drive.google.com/file/d/1mlIHIAf7A-sF5OU8oWp6DcJjYKEYEoi3/view?usp=sharing",
+        "ShortsCrazy": "https://drive.google.com/file/d/1EcTBAdi12-IxW2ZzAJisZjWrg0vXOnhI/view?usp=sharing",
+        "UltraInstinctEdits": "https://drive.google.com/file/d/158-o7yGH8ZSsoY2PcWWtY9Ca7el1YH1_/view?usp=sharing", 
+        "VoidNoJutsu": "https://drive.google.com/file/d/1waGZPZDL8scTehEL3y6j5cNUuDvOa3oo/view?usp=sharing",
+        "ZenkaiZone": "https://drive.google.com/file/d/1PShS-6izCYkTZd18Tnq1lSpk-6F7BFf9/view?usp=sharing"
     }
     
     if not channel_name and not channel_id:
@@ -197,16 +197,16 @@ def list_available_youtube_channels():
     """List all channels that have saved YouTube tokens on Google Drive."""
     # Channel token Google Drive links
     CHANNEL_DRIVE_LINKS = {
-        "AnimeClash": "https://drive.google.com/file/d/1stqrXBmfUT9RU1dI-ne2TB1g6oqOMP2z/view?usp=sharing",
-        "AniSnap": "https://drive.google.com/file/d/1cr0L2BzvUEsJ0hU5ApbJpoyuR3WYC6Fn/view?usp=sharing",
-        "KawaiiCuts": "https://drive.google.com/file/d/1yZeAMperIYb0UA7v2htTYABuHkGRSJLD/view?usp=sharing",
-        "OtakuPulse": "https://drive.google.com/file/d/1Tc_p6IFQqrf41REcpl4qVGnEWuNsSrrK/view?usp=sharing",
-        "SenpaiSnaps": "https://drive.google.com/file/d/1ZcgDV3PyhfAe7H-7v-rhtTlhGzOFycam/view?usp=sharing",
-        "ShinobiSnips": "https://drive.google.com/file/d/1MNGHTcVpbokHFe8O96XjE-ZgNRlcZij6/view?usp=sharing",
-        "ShortsCrazy": "https://drive.google.com/file/d/12IaDZh2NqqFfV1jIEeEJglgRrTSAoHO2/view?usp=sharing",
-        "UltraInstinctEdits": "https://drive.google.com/file/d/1wRZ0QSOexLzPEYFhdSabcTNJokwbClxS/view?usp=sharing", 
-        "VoidNoJutsu": "https://drive.google.com/file/d/19D_WD86e3Mf7K0bwp8gEolRSxHKZcbbL/view?usp=sharing",
-        "ZenkaiZone": "https://drive.google.com/file/d/1mfSOUNEiKT9WYnzhh5KhtZFcUGHPL6fZ/view?usp=sharing"
+        "AnimeClash": "https://drive.google.com/file/d/10jK7v2w6v-MbQOzO7X0P-tC-p2fSaGpb/view?usp=sharing",
+        "AniSnap": "https://drive.google.com/file/d/1dB7mh86gy5WpaKXmXU9ja25FcIV3Q1wr/view?usp=sharing",
+        "KawaiiCuts": "https://drive.google.com/file/d/1g3HJcqpNXQ9qPnKjwp1ktu0_7qnlC9I-/view?usp=sharing",
+        "OtakuPulse": "https://drive.google.com/file/d/1SVYaACDK4Yfe4epx5Cz2e2X0Xb2GX5-c/view?usp=sharing",
+        "SenpaiSnaps": "https://drive.google.com/file/d/10HUSp-nz6RMmMftZ65xmUCSgccz5lCJT/view?usp=sharing",
+        "ShinobiSnips": "https://drive.google.com/file/d/1mlIHIAf7A-sF5OU8oWp6DcJjYKEYEoi3/view?usp=sharing",
+        "ShortsCrazy": "https://drive.google.com/file/d/1EcTBAdi12-IxW2ZzAJisZjWrg0vXOnhI/view?usp=sharing",
+        "UltraInstinctEdits": "https://drive.google.com/file/d/158-o7yGH8ZSsoY2PcWWtY9Ca7el1YH1_/view?usp=sharing", 
+        "VoidNoJutsu": "https://drive.google.com/file/d/1waGZPZDL8scTehEL3y6j5cNUuDvOa3oo/view?usp=sharing",
+        "ZenkaiZone": "https://drive.google.com/file/d/1PShS-6izCYkTZd18Tnq1lSpk-6F7BFf9/view?usp=sharing"
     }
     
     print("\nAvailable YouTube Channels:")
